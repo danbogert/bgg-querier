@@ -9,10 +9,10 @@ public class BggApi {
 
     private static final String API_BASE_URL = "https://www.boardgamegeek.com/xmlapi2/";
 
-    private final RestTemplate restTemplate;
+    private final RestClient restClient;
 
     public BggApi() {
-        this.restTemplate = new RestTemplate();
+        this.restClient = new RestClient();
     }
 
     public Items getOwnedItems(CollectionType collectionType, String username) {
@@ -22,12 +22,7 @@ public class BggApi {
                 .queryParam("own", "1")
                 .queryParam("subtype", collectionType.getType());
 
-        ResponseEntity<Items> response = restTemplate.getForEntity(builder.toUriString(), Items.class);
-
-
-        System.out.println(response);
-
-        return null;
+        return restClient.getWithRetry(builder.toUriString(), Items.class);
     }
 
     public static void main(String[] args) {
@@ -36,6 +31,8 @@ public class BggApi {
         }
 
         BggApi bggApi = new BggApi();
-        bggApi.getOwnedItems(CollectionType.BOARDGAME, args[0]);
+        Items items = bggApi.getOwnedItems(CollectionType.VIDEOGAME, args[0]);
+
+        System.out.println(items);
     }
 }
