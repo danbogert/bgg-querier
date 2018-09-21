@@ -1,4 +1,4 @@
-package com.yogurtpowered.bgg.api.model;
+package com.yogurtpowered.bgg.querier.model;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 

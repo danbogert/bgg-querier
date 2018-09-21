@@ -1,29 +1,76 @@
-package com.yogurtpowered.bgg.api.builder;
+package com.yogurtpowered.bgg.querier;
 
+import com.yogurtpowered.bgg.querier.model.Items;
 import org.springframework.web.util.UriComponentsBuilder;
 
-public class CollectionBuilder extends BggQueryUriBuilder {
+public class CollectionBuilder extends BggQuerier<Items> {
+
+    public enum Subtype { boardgame, boardgameexpansion, boardgameaccessory, rpgitem, rpgissue, videogame }
 
     private static final String COLLECTION_PATH = "collection";
 
     private final String username;
 
+    private boolean retrieveVersion;
+    private Subtype subtype = null;
+    private Subtype excludeSubtype = null;
+
     CollectionBuilder(String username) {
         this.username = username;
     }
 
-    public String build() {
-        return UriComponentsBuilder.fromHttpUrl(API_BASE_URL)
+    /**
+     * Returns version info for each item in your collection.
+     */
+    public CollectionBuilder version() {
+        this.retrieveVersion = true;
+        return this;
+    }
+
+    /**
+     * Specifies which collection you want to retrieve. The default subtype is {@link Subtype#boardgame}.
+     */
+    public CollectionBuilder subtype(Subtype subtype) {
+        this.subtype = subtype;
+        return this;
+    }
+
+    /**
+     * Specifies which subtype you want to exclude from the results.
+     */
+    public CollectionBuilder excludeSubtype(Subtype excludeSubtype) {
+        this.excludeSubtype = excludeSubtype;
+        return this;
+    }
+
+    @Override
+    public Items query() {
+        System.out.println(buildQueryUri());
+
+        return restClient.getWithRetry(buildQueryUri(), Items.class);
+    }
+
+    String buildQueryUri() {
+        UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(API_BASE_URL)
                 .path(COLLECTION_PATH)
-                .queryParam("username", username)
-                .toUriString();
+                .queryParam("username", username);
+
+        if (retrieveVersion) {
+            builder.queryParam("version", "1");
+        }
+
+        if (subtype != null) {
+            builder.queryParam("subtype", subtype.toString());
+        }
+
+        if (excludeSubtype != null) {
+            builder.queryParam("excludesubtype", excludeSubtype.toString());
+        }
+
+        return builder.toUriString();
     }
 }
 
-
-//version=1	Returns version info for each item in your collection.
-//subtype=TYPE	Specifies which collection you want to retrieve. TYPE may be boardgame, boardgameexpansion, boardgameaccessory, rpgitem, rpgissue, or videogame; the default is boardgame
-//excludesubtype=TYPE	Specifies which subtype you want to exclude from the results.
 //id=NNN	Filter collection to specifically listed item(s). NNN may be a comma-delimited list of item ids.
 //brief=1	Returns more abbreviated results.
 //stats=1	Returns expanded rating/ranking info for the collection.
