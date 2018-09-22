@@ -1,4 +1,4 @@
-package com.yogurtpowered.bgg.api;
+package com.yogurtpowered.bgg.querier.utils;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
@@ -25,14 +25,16 @@ public class RestClient {
         }
 
         try {
-            Thread.sleep(50 * attemptCount);
+            Thread.sleep(30 * attemptCount * attemptCount);
         } catch (InterruptedException e) {
         }
 
         if (attemptCount <= RETRY_ATTEMPTS) {
+            System.out.println("Retrying...");
             return getWithRetry(uriString, responseType, ++attemptCount);
         }
 
+        System.out.println("Failed after " + RETRY_ATTEMPTS + " attempts");
         return null;
     }
 }

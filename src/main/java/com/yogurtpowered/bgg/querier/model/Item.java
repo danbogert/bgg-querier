@@ -1,4 +1,4 @@
-package com.yogurtpowered.bgg.api.model;
+package com.yogurtpowered.bgg.querier.model;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
@@ -30,6 +30,8 @@ public class Item {
     private Status status;
     @JacksonXmlProperty(localName = "numplays")
     private int numberOfPlays;
+    @JacksonXmlProperty(localName = "stats")
+    private Stats stats;
 
     public String getObjectType() {
         return objectType;
@@ -111,6 +113,14 @@ public class Item {
         this.numberOfPlays = numberOfPlays;
     }
 
+    public Stats getStats() {
+        return stats;
+    }
+
+    public void setStats(Stats stats) {
+        this.stats = stats;
+    }
+
     @Override
     public String toString() {
         return "Item{" +
@@ -124,6 +134,7 @@ public class Item {
                 ", thumbnail='" + thumbnail + '\'' +
                 ", status=" + status +
                 ", numberOfPlays=" + numberOfPlays +
+                ", stats=" + stats +
                 '}';
     }
 }

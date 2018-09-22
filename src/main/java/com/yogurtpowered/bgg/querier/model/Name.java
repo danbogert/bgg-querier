@@ -1,4 +1,4 @@
-package com.yogurtpowered.bgg.api.model;
+package com.yogurtpowered.bgg.querier.model;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlText;
@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "name")
 public class Name {
-    
+
     @JacksonXmlProperty(isAttribute = true, localName = "sortindex")
     private String sortIndex;
     @JacksonXmlText
