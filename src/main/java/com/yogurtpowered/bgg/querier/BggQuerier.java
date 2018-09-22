@@ -39,6 +39,7 @@ public abstract class BggQuerier<T> {
                 .version()
                 .subtype(CollectionBuilder.Subtype.boardgame)
                 .excludeSubtype(CollectionBuilder.Subtype.boardgameexpansion)
+                .brief()
                 .query();
 
         System.out.println(items);
