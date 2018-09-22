@@ -1,19 +1,24 @@
 package com.yogurtpowered.bgg.querier;
 
+import com.google.common.base.Joiner;
 import com.yogurtpowered.bgg.querier.model.Items;
 import org.springframework.web.util.UriComponentsBuilder;
+
+import java.util.List;
 
 public class CollectionBuilder extends BggQuerier<Items> {
 
     public enum Subtype { boardgame, boardgameexpansion, boardgameaccessory, rpgitem, rpgissue, videogame }
 
     private static final String COLLECTION_PATH = "collection";
+    private static final Joiner JOINER = Joiner.on(',').skipNulls();
 
     private final String username;
 
     private boolean retrieveVersion;
     private Subtype subtype = null;
     private Subtype excludeSubtype = null;
+    private List<String> ids = null;
 
     CollectionBuilder(String username) {
         this.username = username;
@@ -43,6 +48,14 @@ public class CollectionBuilder extends BggQuerier<Items> {
         return this;
     }
 
+    /**
+     * Filter collection to specifically listed item(s).
+     */
+    public CollectionBuilder ids(List<String> ids) {
+        this.ids = ids;
+        return this;
+    }
+
     @Override
     public Items query() {
         System.out.println(buildQueryUri());
@@ -67,11 +80,14 @@ public class CollectionBuilder extends BggQuerier<Items> {
             builder.queryParam("excludesubtype", excludeSubtype.toString());
         }
 
+        if (ids != null && !ids.isEmpty()) {
+            builder.queryParam("id", JOINER.join(ids));
+        }
+
         return builder.toUriString();
     }
 }
 
-//id=NNN	Filter collection to specifically listed item(s). NNN may be a comma-delimited list of item ids.
 //brief=1	Returns more abbreviated results.
 //stats=1	Returns expanded rating/ranking info for the collection.
 //own=[0,1]	Filter for owned games. Set to 0 to exclude these items so marked. Set to 1 for returning owned games and 0 for non-owned games.
