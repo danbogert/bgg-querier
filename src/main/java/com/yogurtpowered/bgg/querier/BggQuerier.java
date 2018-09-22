@@ -1,5 +1,6 @@
 package com.yogurtpowered.bgg.querier;
 
+import com.yogurtpowered.bgg.querier.model.Item;
 import com.yogurtpowered.bgg.querier.model.Items;
 import com.yogurtpowered.bgg.querier.utils.RestClient;
 
@@ -36,13 +37,15 @@ public abstract class BggQuerier<T> {
         }
 
         Items items = BggQuerier.collection(args[0])
-                .version()
                 .subtype(CollectionBuilder.Subtype.boardgame)
-                .excludeSubtype(CollectionBuilder.Subtype.boardgameexpansion)
+                .wanted(false)
                 .brief()
-                .stats()
                 .query();
 
-        System.out.println(items);
+        if (items != null && items.getItem() != null) {
+            for (Item item : items.getItem()) {
+                System.out.println(item);
+            }
+        }
     }
 }

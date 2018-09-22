@@ -21,6 +21,13 @@ public class CollectionBuilder extends BggQuerier<Items> {
     private List<String> ids = null;
     private Boolean brief;
     private Boolean stats;
+    private Boolean owned;
+    private Boolean rated;
+    private Boolean played;
+    private Boolean commented;
+    private Boolean forTrade;
+    private Boolean wanted;
+    private Boolean wishlisted;
 
     CollectionBuilder(String username) {
         this.username = username;
@@ -74,6 +81,62 @@ public class CollectionBuilder extends BggQuerier<Items> {
         return this;
     }
 
+    /**
+     * Filter for owned games. Set to true to return owned games and false for non-owned games.
+     */
+    public CollectionBuilder owned(boolean owned) {
+        this.owned = owned;
+        return this;
+    }
+
+    /**
+     * Filter for whether an item has been rated. Set to true to include only items with a rating.
+     */
+    public CollectionBuilder rated(boolean rated) {
+        this.rated = rated;
+        return this;
+    }
+
+    /**
+     * Filter for whether an item has been played. Set to true to include only items that have been played.
+     */
+    public CollectionBuilder played(boolean played) {
+        this.played = played;
+        return this;
+    }
+
+    /**
+     * Filter for items that have been commented. Set to true to include only items that have a comment;
+     */
+    public CollectionBuilder commented(boolean commented) {
+        this.commented = commented;
+        return this;
+    }
+
+    /**
+     * Filter for items marked for trade. Set to true to include only items marked for trade.
+     */
+    public CollectionBuilder forTrade(boolean forTrade) {
+        this.forTrade = forTrade;
+        return this;
+    }
+
+    /**
+     * Filter for items wanted in trade. Set to true to include only items wanted in trade.
+     */
+    public CollectionBuilder wanted(boolean wanted) {
+        this.wanted = wanted;
+        return this;
+    }
+
+    /**
+     * Filter for items on the wishlist. Set to true to include only items that have been wishlisted.
+     */
+    public CollectionBuilder wishlisted(boolean wishlisted) {
+        this.wishlisted = wishlisted;
+        return this;
+    }
+
     @Override
     public Items query() {
         System.out.println(buildQueryUri());
@@ -92,6 +155,13 @@ public class CollectionBuilder extends BggQuerier<Items> {
         addQueryParamIfSet(builder, "id", ids);
         addQueryParamIfSet(builder, "brief", brief);
         addQueryParamIfSet(builder, "stats", stats);
+        addQueryParamIfSet(builder, "own", owned);
+        addQueryParamIfSet(builder, "rated", rated);
+        addQueryParamIfSet(builder, "played", played);
+        addQueryParamIfSet(builder, "comment", commented);
+        addQueryParamIfSet(builder, "trade", forTrade);
+        addQueryParamIfSet(builder, "want", wanted);
+        addQueryParamIfSet(builder, "wishlist", wishlisted);
 
         return builder.toUriString();
     }
@@ -115,13 +185,6 @@ public class CollectionBuilder extends BggQuerier<Items> {
     }
 }
 
-//own=[0,1]	Filter for owned games. Set to 0 to exclude these items so marked. Set to 1 for returning owned games and 0 for non-owned games.
-//rated=[0,1]	Filter for whether an item has been rated. Set to 0 to exclude these items so marked. Set to 1 to include only these items so marked.
-//played=[0,1]	Filter for whether an item has been played. Set to 0 to exclude these items so marked. Set to 1 to include only these items so marked.
-//comment=[0,1]	Filter for items that have been commented. Set to 0 to exclude these items so marked. Set to 1 to include only these items so marked.
-//trade=[0,1]	Filter for items marked for trade. Set to 0 to exclude these items so marked. Set to 1 to include only these items so marked.
-//want=[0,1]	Filter for items wanted in trade. Set to 0 to exclude these items so marked. Set to 1 to include only these items so marked.
-//wishlist=[0,1]	Filter for items on the wishlist. Set to 0 to exclude these items so marked. Set to 1 to include only these items so marked.
 //wishlistpriority=[1-5]	Filter for wishlist priority. Returns only items of the specified priority.
 //preordered=[0,1]	Filter for pre-ordered games Returns only items of the specified priority. Set to 0 to exclude these items so marked. Set to 1 to include only these items so marked.
 //wanttoplay=[0,1]	Filter for items marked as wanting to play. Set to 0 to exclude these items so marked. Set to 1 to include only these items so marked.
