@@ -20,6 +20,7 @@ public class CollectionBuilder extends BggQuerier<Items> {
     private Subtype excludeSubtype = null;
     private List<String> ids = null;
     private boolean brief;
+    private boolean stats;
 
     CollectionBuilder(String username) {
         this.username = username;
@@ -65,6 +66,14 @@ public class CollectionBuilder extends BggQuerier<Items> {
         return this;
     }
 
+    /**
+     * Returns expanded rating/ranking info for the collection.
+     */
+    public CollectionBuilder stats() {
+        this.stats = true;
+        return this;
+    }
+
     @Override
     public Items query() {
         System.out.println(buildQueryUri());
@@ -97,11 +106,14 @@ public class CollectionBuilder extends BggQuerier<Items> {
             builder.queryParam("brief", "1");
         }
 
+        if (stats) {
+            builder.queryParam("stats", "1");
+        }
+
         return builder.toUriString();
     }
 }
 
-//stats=1	Returns expanded rating/ranking info for the collection.
 //own=[0,1]	Filter for owned games. Set to 0 to exclude these items so marked. Set to 1 for returning owned games and 0 for non-owned games.
 //rated=[0,1]	Filter for whether an item has been rated. Set to 0 to exclude these items so marked. Set to 1 to include only these items so marked.
 //played=[0,1]	Filter for whether an item has been played. Set to 0 to exclude these items so marked. Set to 1 to include only these items so marked.
