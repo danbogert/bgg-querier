@@ -15,12 +15,12 @@ public class CollectionBuilder extends BggQuerier<Items> {
 
     private final String username;
 
-    private boolean retrieveVersion;
+    private Boolean retrieveVersion;
     private Subtype subtype = null;
     private Subtype excludeSubtype = null;
     private List<String> ids = null;
-    private boolean brief;
-    private boolean stats;
+    private Boolean brief;
+    private Boolean stats;
 
     CollectionBuilder(String username) {
         this.username = username;
@@ -30,7 +30,7 @@ public class CollectionBuilder extends BggQuerier<Items> {
      * Returns version info for each item in your collection.
      */
     public CollectionBuilder version() {
-        this.retrieveVersion = true;
+        this.retrieveVersion = Boolean.TRUE;
         return this;
     }
 
@@ -62,7 +62,7 @@ public class CollectionBuilder extends BggQuerier<Items> {
      * Returns more abbreviated results.
      */
     public CollectionBuilder brief() {
-        this.brief = true;
+        this.brief = Boolean.TRUE;
         return this;
     }
 
@@ -70,7 +70,7 @@ public class CollectionBuilder extends BggQuerier<Items> {
      * Returns expanded rating/ranking info for the collection.
      */
     public CollectionBuilder stats() {
-        this.stats = true;
+        this.stats = Boolean.TRUE;
         return this;
     }
 
@@ -86,31 +86,32 @@ public class CollectionBuilder extends BggQuerier<Items> {
                 .path(COLLECTION_PATH)
                 .queryParam("username", username);
 
-        if (retrieveVersion) {
-            builder.queryParam("version", "1");
-        }
-
-        if (subtype != null) {
-            builder.queryParam("subtype", subtype.toString());
-        }
-
-        if (excludeSubtype != null) {
-            builder.queryParam("excludesubtype", excludeSubtype.toString());
-        }
-
-        if (ids != null && !ids.isEmpty()) {
-            builder.queryParam("id", JOINER.join(ids));
-        }
-
-        if (brief) {
-            builder.queryParam("brief", "1");
-        }
-
-        if (stats) {
-            builder.queryParam("stats", "1");
-        }
+        addQueryParamIfSet(builder, "version", retrieveVersion);
+        addQueryParamIfSet(builder, "subtype", subtype);
+        addQueryParamIfSet(builder, "excludesubtype", excludeSubtype);
+        addQueryParamIfSet(builder, "id", ids);
+        addQueryParamIfSet(builder, "brief", brief);
+        addQueryParamIfSet(builder, "stats", stats);
 
         return builder.toUriString();
+    }
+
+    private void addQueryParamIfSet(UriComponentsBuilder builder, String name, Boolean value) {
+        if (value != null) {
+            builder.queryParam(name, value == Boolean.TRUE ? "1" : "0");
+        }
+    }
+
+    private void addQueryParamIfSet(UriComponentsBuilder builder, String name, Subtype value) {
+        if (value != null) {
+            builder.queryParam(name, value.toString());
+        }
+    }
+
+    private void addQueryParamIfSet(UriComponentsBuilder builder, String name, List<String> values) {
+        if (values != null && !values.isEmpty()) {
+            builder.queryParam(name, JOINER.join(values));
+        }
     }
 }
 
