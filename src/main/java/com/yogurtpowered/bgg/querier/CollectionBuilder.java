@@ -36,9 +36,9 @@ public class CollectionBuilder extends BggQuerier<Items> {
     private Boolean hasParts;
     private Boolean wantParts;
     private Integer wishListPriority;
-    private Integer minRating;
+    private Integer minimumRating;
     private Integer maximumRating;
-    private Integer minBggRating;
+    private Integer minimumBggRating;
     private Integer maximumBggRating;
 
     CollectionBuilder(String username) {
@@ -209,11 +209,11 @@ public class CollectionBuilder extends BggQuerier<Items> {
 
     /**
      * Filter on minimum personal rating assigned for items in the collection.
-     * @param minRating must be a value from 1-10
+     * @param minimumRating must be a value from 1-10
      */
-    public CollectionBuilder minimumRating(int minRating) {
-        Preconditions.checkArgument(minRating >= 1 && minRating <= 10);
-        this.minRating = minRating;
+    public CollectionBuilder minimumRating(int minimumRating) {
+        Preconditions.checkArgument(minimumRating >= 1 && minimumRating <= 10);
+        this.minimumRating = minimumRating;
         return this;
     }
 
@@ -229,11 +229,11 @@ public class CollectionBuilder extends BggQuerier<Items> {
 
     /**
      * Filter on minimum BGG rating for items in the collection.
-     * @param minBggRating must be a value from 1-10 or -1 (to get items without a rating)
+     * @param minimumBggRating must be a value from 1-10 or -1 (to get items without a rating)
      */
-    public CollectionBuilder minimumBggRating(int minBggRating) {
-        Preconditions.checkArgument((minBggRating >= 1 && minBggRating <= 10) || (minBggRating == -1));
-        this.minBggRating = minBggRating;
+    public CollectionBuilder minimumBggRating(int minimumBggRating) {
+        Preconditions.checkArgument((minimumBggRating >= 1 && minimumBggRating <= 10) || (minimumBggRating == -1));
+        this.minimumBggRating = minimumBggRating;
         return this;
     }
 
@@ -279,9 +279,9 @@ public class CollectionBuilder extends BggQuerier<Items> {
         addQueryParamIfSet(builder, "hasparts", hasParts);
         addQueryParamIfSet(builder, "wantparts", wantParts);
         addQueryParamIfSet(builder, "wishlistpriority", wishListPriority);
-        addQueryParamIfSet(builder, "minrating", minRating);
+        addQueryParamIfSet(builder, "minrating", minimumRating);
         addQueryParamIfSet(builder, "rating", maximumRating);
-        addQueryParamIfSet(builder, "minbggrating", minBggRating);
+        addQueryParamIfSet(builder, "minbggrating", minimumBggRating);
         addQueryParamIfSet(builder, "bggrating", maximumBggRating);
 
         return builder.toUriString();
