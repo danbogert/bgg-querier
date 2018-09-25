@@ -28,6 +28,12 @@ public class CollectionBuilder extends BggQuerier<Items> {
     private Boolean forTrade;
     private Boolean wanted;
     private Boolean wishlisted;
+    private Boolean preordered;
+    private Boolean wantToPlay;
+    private Boolean wantToBuy;
+    private Boolean previouslyOwned;
+    private Boolean hasParts;
+    private Boolean wantParts;
 
     CollectionBuilder(String username) {
         this.username = username;
@@ -137,6 +143,54 @@ public class CollectionBuilder extends BggQuerier<Items> {
         return this;
     }
 
+    /**
+     * Filter for pre-ordered games. Set to true to include only pre-ordered items.
+     */
+    public CollectionBuilder preordered(boolean preordered) {
+        this.preordered = preordered;
+        return this;
+    }
+
+    /**
+     * Filter for items marked as wanting to play. Set to false to exclude these items, set to true to include only these items.
+     */
+    public CollectionBuilder wantToPlay(boolean wantToPlay) {
+        this.wantToPlay = wantToPlay;
+        return this;
+    }
+
+    /**
+     * Filter for items marked as wanting to buy. Set to false to exclude these items, set to true to include only these items.
+     */
+    public CollectionBuilder wantToBuy(boolean wantToBuy) {
+        this.wantToBuy = wantToBuy;
+        return this;
+    }
+
+    /**
+     * Filter for games marked previously owned. Set to false to exclude these items, set to true to include only these items.
+     */
+    public CollectionBuilder previouslyOwned(boolean previouslyOwned) {
+        this.previouslyOwned = previouslyOwned;
+        return this;
+    }
+
+    /**
+     * Filter on whether there is a comment in the Has Parts field of the item. Set to false to exclude these items, set to true to include only these items.
+     */
+    public CollectionBuilder hasParts(boolean hasParts) {
+        this.hasParts = hasParts;
+        return this;
+    }
+
+    /**
+     * Filter on whether there is a comment in the Wants Parts field of the item. Set to false to exclude these items, set to true to include only these items.
+     */
+    public CollectionBuilder wantParts(boolean wantParts) {
+        this.wantParts = wantParts;
+        return this;
+    }
+
     @Override
     public Items query() {
         System.out.println(buildQueryUri());
@@ -162,6 +216,12 @@ public class CollectionBuilder extends BggQuerier<Items> {
         addQueryParamIfSet(builder, "trade", forTrade);
         addQueryParamIfSet(builder, "want", wanted);
         addQueryParamIfSet(builder, "wishlist", wishlisted);
+        addQueryParamIfSet(builder, "preordered", preordered);
+        addQueryParamIfSet(builder, "wanttoplay", wantToPlay);
+        addQueryParamIfSet(builder, "wanttobuy", wantToBuy);
+        addQueryParamIfSet(builder, "prevowned", previouslyOwned);
+        addQueryParamIfSet(builder, "hasparts", hasParts);
+        addQueryParamIfSet(builder, "wantparts", wantParts);
 
         return builder.toUriString();
     }
@@ -186,18 +246,17 @@ public class CollectionBuilder extends BggQuerier<Items> {
 }
 
 //wishlistpriority=[1-5]	Filter for wishlist priority. Returns only items of the specified priority.
-//preordered=[0,1]	Filter for pre-ordered games Returns only items of the specified priority. Set to 0 to exclude these items so marked. Set to 1 to include only these items so marked.
-//wanttoplay=[0,1]	Filter for items marked as wanting to play. Set to 0 to exclude these items so marked. Set to 1 to include only these items so marked.
-//wanttobuy=[0,1]	Filter for ownership flag. Set to 0 to exclude these items so marked. Set to 1 to include only these items so marked.
-//prevowned=[0,1]	Filter for games marked previously owned. Set to 0 to exclude these items so marked. Set to 1 to include only these items so marked.
-//hasparts=[0,1]	Filter on whether there is a comment in the Has Parts field of the item. Set to 0 to exclude these items so marked. Set to 1 to include only these items so marked.
-//wantparts=[0,1]	Filter on whether there is a comment in the Wants Parts field of the item. Set to 0 to exclude these items so marked. Set to 1 to include only these items so marked.
+
 //minrating=[1-10]	Filter on minimum personal rating assigned for that item in the collection.
 //rating=[1-10]	Filter on maximum personal rating assigned for that item in the collection. [Note: Although you'd expect it to be maxrating, it's rating.]
 //minbggrating=[1-10]	Filter on minimum BGG rating for that item in the collection. Note: 0 is ignored... you can use -1 though, for example min -1 and max 1 to get items w/no bgg rating.
 //bggrating=[1-10]	Filter on maximum BGG rating for that item in the collection. [Note: Although you'd expect it to be maxbggrating, it's bggrating.]
+
 //minplays=NNN	Filter by minimum number of recorded plays.
 //maxplays=NNN	Filter by maximum number of recorded plays. [Note: Although the two maxima parameters above lack the max part, this one really is maxplays.]
+
 //showprivate=1	Filter to show private collection info. Only works when viewing your own collection and you are logged in.
+
 //collid=NNN	Restrict the collection results to the single specified collection id. Collid is returned in the results of normal queries as well.
+
 //modifiedsince=YY-MM-DD	Restricts the collection results to only those whose status (own, want, fortrade, etc.) has changed or been added since the date specified (does not return results for deletions). Time may be added as well: modifiedsince=YY-MM-DD%20HH:MM:SS
