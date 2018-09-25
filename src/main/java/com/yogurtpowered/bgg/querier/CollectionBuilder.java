@@ -1,6 +1,7 @@
 package com.yogurtpowered.bgg.querier;
 
 import com.google.common.base.Joiner;
+import com.google.common.base.Preconditions;
 import com.yogurtpowered.bgg.querier.model.Items;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -34,6 +35,11 @@ public class CollectionBuilder extends BggQuerier<Items> {
     private Boolean previouslyOwned;
     private Boolean hasParts;
     private Boolean wantParts;
+    private Integer wishListPriority;
+    private Integer minRating;
+    private Integer maximumRating;
+    private Integer minBggRating;
+    private Integer maximumBggRating;
 
     CollectionBuilder(String username) {
         this.username = username;
@@ -191,6 +197,56 @@ public class CollectionBuilder extends BggQuerier<Items> {
         return this;
     }
 
+    /**
+     * Filter for wishlist priority. Returns only items of the specified priority.
+     * @param wishListPriority must be a value from 1-5
+     */
+    public CollectionBuilder wishListPriority(int wishListPriority) {
+        Preconditions.checkArgument(wishListPriority >= 1 && wishListPriority <= 5);
+        this.wishListPriority = wishListPriority;
+        return this;
+    }
+
+    /**
+     * Filter on minimum personal rating assigned for items in the collection.
+     * @param minRating must be a value from 1-10
+     */
+    public CollectionBuilder minimumRating(int minRating) {
+        Preconditions.checkArgument(minRating >= 1 && minRating <= 10);
+        this.minRating = minRating;
+        return this;
+    }
+
+    /**
+     * Filter on maximum personal rating assigned for items in the collection.
+     * @param maximumRating must be a value from 1-10
+     */
+    public CollectionBuilder maximumRating(int maximumRating) {
+        Preconditions.checkArgument(maximumRating >= 1 && maximumRating <= 10);
+        this.maximumRating = maximumRating;
+        return this;
+    }
+
+    /**
+     * Filter on minimum BGG rating for items in the collection.
+     * @param minBggRating must be a value from 1-10 or -1 (to get items without a rating)
+     */
+    public CollectionBuilder minimumBggRating(int minBggRating) {
+        Preconditions.checkArgument((minBggRating >= 1 && minBggRating <= 10) || (minBggRating == -1));
+        this.minBggRating = minBggRating;
+        return this;
+    }
+
+    /**
+     * Filter on maximum BGG rating for items in the collection.
+     * @param maximumBggRating must be a value from 1-10
+     */
+    public CollectionBuilder maximumBggRating(int maximumBggRating) {
+        Preconditions.checkArgument(maximumBggRating >= 1 && maximumBggRating <= 10);
+        this.maximumBggRating = maximumBggRating;
+        return this;
+    }
+
     @Override
     public Items query() {
         System.out.println(buildQueryUri());
@@ -222,6 +278,11 @@ public class CollectionBuilder extends BggQuerier<Items> {
         addQueryParamIfSet(builder, "prevowned", previouslyOwned);
         addQueryParamIfSet(builder, "hasparts", hasParts);
         addQueryParamIfSet(builder, "wantparts", wantParts);
+        addQueryParamIfSet(builder, "wishlistpriority", wishListPriority);
+        addQueryParamIfSet(builder, "minrating", minRating);
+        addQueryParamIfSet(builder, "rating", maximumRating);
+        addQueryParamIfSet(builder, "minbggrating", minBggRating);
+        addQueryParamIfSet(builder, "bggrating", maximumBggRating);
 
         return builder.toUriString();
     }
@@ -243,14 +304,13 @@ public class CollectionBuilder extends BggQuerier<Items> {
             builder.queryParam(name, JOINER.join(values));
         }
     }
+
+    private void addQueryParamIfSet(UriComponentsBuilder builder, String name, Integer value) {
+        if (value != null) {
+            builder.queryParam(name, value.intValue());
+        }
+    }
 }
-
-//wishlistpriority=[1-5]	Filter for wishlist priority. Returns only items of the specified priority.
-
-//minrating=[1-10]	Filter on minimum personal rating assigned for that item in the collection.
-//rating=[1-10]	Filter on maximum personal rating assigned for that item in the collection. [Note: Although you'd expect it to be maxrating, it's rating.]
-//minbggrating=[1-10]	Filter on minimum BGG rating for that item in the collection. Note: 0 is ignored... you can use -1 though, for example min -1 and max 1 to get items w/no bgg rating.
-//bggrating=[1-10]	Filter on maximum BGG rating for that item in the collection. [Note: Although you'd expect it to be maxbggrating, it's bggrating.]
 
 //minplays=NNN	Filter by minimum number of recorded plays.
 //maxplays=NNN	Filter by maximum number of recorded plays. [Note: Although the two maxima parameters above lack the max part, this one really is maxplays.]
