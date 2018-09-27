@@ -40,6 +40,8 @@ public class CollectionBuilder extends BggQuerier<Items> {
     private Integer maximumRating;
     private Integer minimumBggRating;
     private Integer maximumBggRating;
+    private Integer minimumPlays;
+    private Integer maximumPlays;
 
     CollectionBuilder(String username) {
         this.username = username;
@@ -247,6 +249,26 @@ public class CollectionBuilder extends BggQuerier<Items> {
         return this;
     }
 
+    /**
+     * Filter by minimum number of recorded plays.
+     * @param minimumPlays must be greater than or equal to zero and less than or equal to maximum plays, if set
+     */
+    public CollectionBuilder minmumPlays(int minimumPlays) {
+        Preconditions.checkArgument(minimumPlays >= 0 && (maximumPlays == null || minimumPlays <= maximumPlays));
+        this.minimumPlays = minimumPlays;
+        return this;
+    }
+
+    /**
+     * Filter by maximum number of recorded plays.
+     * @param maximumPlays must be greater than or equal to zero and greater than or equal to minimum plays, if set
+     */
+    public CollectionBuilder maximumPlays(int maximumPlays) {
+        Preconditions.checkArgument(maximumPlays >= 0 && (minimumPlays == null || minimumPlays <= maximumPlays));
+        this.maximumPlays = maximumPlays;
+        return this;
+    }
+
     @Override
     public Items query() {
         System.out.println(buildQueryUri());
@@ -283,6 +305,8 @@ public class CollectionBuilder extends BggQuerier<Items> {
         addQueryParamIfSet(builder, "rating", maximumRating);
         addQueryParamIfSet(builder, "minbggrating", minimumBggRating);
         addQueryParamIfSet(builder, "bggrating", maximumBggRating);
+        addQueryParamIfSet(builder, "minplays", minimumPlays);
+        addQueryParamIfSet(builder, "maxplays", maximumPlays);
 
         return builder.toUriString();
     }
@@ -312,8 +336,6 @@ public class CollectionBuilder extends BggQuerier<Items> {
     }
 }
 
-//minplays=NNN	Filter by minimum number of recorded plays.
-//maxplays=NNN	Filter by maximum number of recorded plays. [Note: Although the two maxima parameters above lack the max part, this one really is maxplays.]
 
 //showprivate=1	Filter to show private collection info. Only works when viewing your own collection and you are logged in.
 

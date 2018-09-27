@@ -38,14 +38,19 @@ public abstract class BggQuerier<T> {
 
         Items items = BggQuerier.collection(args[0])
                 .subtype(CollectionBuilder.Subtype.boardgame)
-                .wanted(false)
+                .excludeSubtype(CollectionBuilder.Subtype.boardgameexpansion)
+                .minmumPlays(8)
                 .brief()
+                .stats()
                 .query();
 
         if (items != null && items.getItem() != null) {
             for (Item item : items.getItem()) {
                 System.out.println(item);
             }
+            System.out.println("Results: " + items.getItem().size());
+        } else {
+            System.out.println("Results: 0");
         }
     }
 }
