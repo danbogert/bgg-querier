@@ -1,6 +1,5 @@
 package com.yogurtpowered.bgg.querier;
 
-import com.google.common.base.Joiner;
 import com.google.common.base.Preconditions;
 import com.yogurtpowered.bgg.querier.model.Items;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -12,7 +11,6 @@ public class CollectionBuilder extends BggQuerier<Items> {
     public enum Subtype { boardgame, boardgameexpansion, boardgameaccessory, rpgitem, rpgissue, videogame }
 
     private static final String COLLECTION_PATH = "collection";
-    private static final Joiner JOINER = Joiner.on(',').skipNulls();
 
     private final String username;
 
@@ -322,20 +320,14 @@ public class CollectionBuilder extends BggQuerier<Items> {
     }
 
     @Override
-    public Items query() {
-        System.out.println(buildQueryUri());
-
-        return restClient.getWithRetry(buildQueryUri(), Items.class);
-    }
-
-    String buildQueryUri() {
+    protected String buildQueryUri() {
         UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(API_BASE_URL)
                 .path(COLLECTION_PATH)
                 .queryParam("username", username);
 
         addQueryParamIfSet(builder, "version", retrieveVersion);
-        addQueryParamIfSet(builder, "subtype", subtype);
-        addQueryParamIfSet(builder, "excludesubtype", excludeSubtype);
+        addQueryParamIfSet(builder, "subtype", subtype.toString());
+        addQueryParamIfSet(builder, "excludesubtype", excludeSubtype.toString());
         addQueryParamIfSet(builder, "id", ids);
         addQueryParamIfSet(builder, "brief", brief);
         addQueryParamIfSet(builder, "stats", stats);
@@ -366,33 +358,8 @@ public class CollectionBuilder extends BggQuerier<Items> {
         return builder.toUriString();
     }
 
-    private void addQueryParamIfSet(UriComponentsBuilder builder, String name, Boolean value) {
-        if (value != null) {
-            builder.queryParam(name, value == Boolean.TRUE ? "1" : "0");
-        }
-    }
-
-    private void addQueryParamIfSet(UriComponentsBuilder builder, String name, Subtype value) {
-        if (value != null) {
-            builder.queryParam(name, value.toString());
-        }
-    }
-
-    private void addQueryParamIfSet(UriComponentsBuilder builder, String name, List<String> values) {
-        if (values != null && !values.isEmpty()) {
-            builder.queryParam(name, JOINER.join(values));
-        }
-    }
-
-    private void addQueryParamIfSet(UriComponentsBuilder builder, String name, Integer value) {
-        if (value != null) {
-            builder.queryParam(name, value.intValue());
-        }
-    }
-
-    private void addQueryParamIfSet(UriComponentsBuilder builder, String name, String value) {
-        if (value != null) {
-            builder.queryParam(name, value);
-        }
+    @Override
+    protected Class<Items> getResponseType() {
+        return Items.class;
     }
 }
