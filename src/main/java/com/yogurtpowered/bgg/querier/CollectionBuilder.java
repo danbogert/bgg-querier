@@ -35,6 +35,7 @@ public class CollectionBuilder extends BggQuerier<Items> {
     private Boolean previouslyOwned;
     private Boolean hasParts;
     private Boolean wantParts;
+    private Boolean showPrivate;
     private Integer wishListPriority;
     private Integer minimumRating;
     private Integer maximumRating;
@@ -42,6 +43,8 @@ public class CollectionBuilder extends BggQuerier<Items> {
     private Integer maximumBggRating;
     private Integer minimumPlays;
     private Integer maximumPlays;
+    private Integer collectionId;
+    private String modifiedSince;
 
     CollectionBuilder(String username) {
         this.username = username;
@@ -200,6 +203,14 @@ public class CollectionBuilder extends BggQuerier<Items> {
     }
 
     /**
+     * Filter to show private collection info. Only works when viewing your own collection and you are logged in.
+     */
+    public CollectionBuilder showPrivate(boolean showPrivate) {
+        this.showPrivate = showPrivate;
+        return this;
+    }
+
+    /**
      * Filter for wishlist priority. Returns only items of the specified priority.
      * @param wishListPriority must be a value from 1-5
      */
@@ -269,6 +280,47 @@ public class CollectionBuilder extends BggQuerier<Items> {
         return this;
     }
 
+    /**
+     * Restrict the collection results to the single specified collection id. Collid is returned in the results of normal queries as well.
+     */
+    public CollectionBuilder collectionId(int collectionId) {
+        this.collectionId = collectionId;
+        return this;
+    }
+
+    /**
+     * Restricts the collection results to only those whose status has changed since the date specified (does not return results for deletions).
+     * @param year must be between 1990 and 2050
+     * @param month must be between 1 and 12
+     * @param day must be between 1 and 31
+     */
+    public CollectionBuilder modifiedSince(int year, int month, int day) {
+        Preconditions.checkArgument(year >= 1990 && year <= 2050);
+        Preconditions.checkArgument(month >= 1 && month <= 12);
+        Preconditions.checkArgument(day >= 1 && day <= 31);
+        this.modifiedSince = year % 100 + "-" + month + "-" + day;
+        return this;
+    }
+
+    /**
+     * Restricts the collection results to only those whose status has changed since the date specified (does not return results for deletions).
+     * @param year must be between 1990 and 2050
+     * @param month must be between 1 and 12
+     * @param day must be between 1 and 31
+     * @param hour must be between 0 and 23
+     * @param minute must be between 0 and 59
+     * @param second must be between 0 and 59
+     * @return
+     */
+    public CollectionBuilder modifiedSince(int year, int month, int day, int hour, int minute, int second) {
+        Preconditions.checkArgument(hour >= 0 && hour <= 23);
+        Preconditions.checkArgument(minute >= 0 && minute <= 59);
+        Preconditions.checkArgument(second >= 0 && second <= 59);
+        modifiedSince(year, month, day);
+        this.modifiedSince += "%20" + hour + ":" + minute + ":" + second;
+        return this;
+    }
+
     @Override
     public Items query() {
         System.out.println(buildQueryUri());
@@ -300,6 +352,7 @@ public class CollectionBuilder extends BggQuerier<Items> {
         addQueryParamIfSet(builder, "prevowned", previouslyOwned);
         addQueryParamIfSet(builder, "hasparts", hasParts);
         addQueryParamIfSet(builder, "wantparts", wantParts);
+        addQueryParamIfSet(builder, "showprivate", showPrivate);
         addQueryParamIfSet(builder, "wishlistpriority", wishListPriority);
         addQueryParamIfSet(builder, "minrating", minimumRating);
         addQueryParamIfSet(builder, "rating", maximumRating);
@@ -307,6 +360,8 @@ public class CollectionBuilder extends BggQuerier<Items> {
         addQueryParamIfSet(builder, "bggrating", maximumBggRating);
         addQueryParamIfSet(builder, "minplays", minimumPlays);
         addQueryParamIfSet(builder, "maxplays", maximumPlays);
+        addQueryParamIfSet(builder, "collid", collectionId);
+        addQueryParamIfSet(builder, "modifiedsince", modifiedSince);
 
         return builder.toUriString();
     }
@@ -334,11 +389,10 @@ public class CollectionBuilder extends BggQuerier<Items> {
             builder.queryParam(name, value.intValue());
         }
     }
+
+    private void addQueryParamIfSet(UriComponentsBuilder builder, String name, String value) {
+        if (value != null) {
+            builder.queryParam(name, value);
+        }
+    }
 }
-
-
-//showprivate=1	Filter to show private collection info. Only works when viewing your own collection and you are logged in.
-
-//collid=NNN	Restrict the collection results to the single specified collection id. Collid is returned in the results of normal queries as well.
-
-//modifiedsince=YY-MM-DD	Restricts the collection results to only those whose status (own, want, fortrade, etc.) has changed or been added since the date specified (does not return results for deletions). Time may be added as well: modifiedsince=YY-MM-DD%20HH:MM:SS
