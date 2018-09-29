@@ -1,8 +1,6 @@
 package com.yogurtpowered.bgg.querier;
 
 import com.google.common.base.Joiner;
-import com.yogurtpowered.bgg.querier.model.Item;
-import com.yogurtpowered.bgg.querier.model.Items;
 import com.yogurtpowered.bgg.querier.utils.RestClient;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -10,7 +8,7 @@ import java.util.List;
 
 public abstract class BggQuerier<T> {
     protected static final String API_BASE_URL = "https://www.boardgamegeek.com/xmlapi2/";
-    private static final Joiner JOINER = Joiner.on(',').skipNulls();
+    private static final Joiner COMMA_JOINER = Joiner.on(',').skipNulls();
 
     protected final RestClient restClient;
 
@@ -34,6 +32,10 @@ public abstract class BggQuerier<T> {
         return new HotItemsBuilder();
     }
     // geeklist (not implemented)
+
+    public static SearchBuilder search(String query) {
+        return new SearchBuilder(query);
+    }
     // search
 
     public T query() {
@@ -52,9 +54,9 @@ public abstract class BggQuerier<T> {
         }
     }
 
-    protected void addQueryParamIfSet(UriComponentsBuilder builder, String name, List<String> values) {
+    protected void addQueryParamIfSet(UriComponentsBuilder builder, String name, List<?> values) {
         if (values != null && !values.isEmpty()) {
-            builder.queryParam(name, JOINER.join(values));
+            builder.queryParam(name, COMMA_JOINER.join(values));
         }
     }
 
@@ -92,10 +94,16 @@ public abstract class BggQuerier<T> {
 //            System.out.println("Results: 0");
 //        }
 
-        String hot = BggQuerier.hotItems()
-                .type(HotItemsBuilder.Type.boardgame)
+//        String hot = BggQuerier.hotItems()
+//                .type(HotItemsBuilder.Type.videogame)
+//                .query();
+//
+//        System.out.println(hot);
+
+        String query = BggQuerier.search("pandemic")
+                .type(SearchBuilder.Type.boardgame)
                 .query();
 
-        System.out.println(hot);
+        System.out.println(query);
     }
 }
