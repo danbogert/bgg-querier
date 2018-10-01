@@ -18,13 +18,6 @@ public class HotItemsBuilder extends BggQuerier<String> {
     }
 
     @Override
-    public String query() {
-        System.out.println(buildQueryUri());
-
-        return restClient.getWithRetry(buildQueryUri(), String.class);
-    }
-
-    @Override
     protected String buildQueryUri() {
         UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(API_BASE_URL)
                 .path(HOT_ITEMS_PATH);
