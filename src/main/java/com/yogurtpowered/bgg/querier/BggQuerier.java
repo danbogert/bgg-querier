@@ -23,7 +23,10 @@ public abstract class BggQuerier<T> {
     // thread
     // user
     // guild
-    // plays
+    public static PlaysBuilder plays(String username) {
+        return new PlaysBuilder(username);
+    }
+
     public static CollectionBuilder collection(String username) {
         return new CollectionBuilder(username);
     }
@@ -36,7 +39,6 @@ public abstract class BggQuerier<T> {
     public static SearchBuilder search(String query) {
         return new SearchBuilder(query);
     }
-    // search
 
     public T query() {
         System.out.println(buildQueryUri());
@@ -100,8 +102,14 @@ public abstract class BggQuerier<T> {
 //
 //        System.out.println(hot);
 
-        String query = BggQuerier.search("pandemic")
-                .type(SearchBuilder.Type.boardgame)
+//        String query = BggQuerier.search("pandemic")
+//                .type(SearchBuilder.Type.boardgame)
+//                .query();
+//
+//        System.out.println(query);
+
+        String query = BggQuerier.plays("username")
+                .subtype(PlaysBuilder.Subtype.boardgame)
                 .query();
 
         System.out.println(query);
