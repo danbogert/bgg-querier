@@ -73,45 +73,4 @@ public abstract class BggQuerier<T> {
             builder.queryParam(name, value);
         }
     }
-
-    public static void main(String[] args) {
-        if (args.length == 0) {
-            throw new RuntimeException("Pass the username as a argument");
-        }
-
-//        Items items = BggQuerier.collection(args[0])
-//                .subtype(CollectionBuilder.Subtype.boardgame)
-//                .excludeSubtype(CollectionBuilder.Subtype.boardgameexpansion)
-//                .modifiedSince(2018, 9, 13)
-//                .brief()
-//                .stats()
-//                .query();
-//
-//        if (items != null && items.getItem() != null) {
-//            for (Item item : items.getItem()) {
-//                System.out.println(item);
-//            }
-//            System.out.println("Results: " + items.getItem().size());
-//        } else {
-//            System.out.println("Results: 0");
-//        }
-
-//        String hot = BggQuerier.hotItems()
-//                .type(HotItemsBuilder.Type.videogame)
-//                .query();
-//
-//        System.out.println(hot);
-
-//        String query = BggQuerier.search("pandemic")
-//                .type(SearchBuilder.Type.boardgame)
-//                .query();
-//
-//        System.out.println(query);
-
-        String query = BggQuerier.plays("username")
-                .subtype(PlaysBuilder.Subtype.boardgame)
-                .query();
-
-        System.out.println(query);
-    }
 }
