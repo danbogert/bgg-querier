@@ -22,7 +22,7 @@ public class HotItemsBuilder extends BggQuerier<String> {
         UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(API_BASE_URL)
                 .path(HOT_ITEMS_PATH);
 
-        addQueryParamIfSet(builder, "type", type.toString());
+        addQueryParamIfSet(builder, "type", type == null ? null : type.toString());
 
         return builder.toUriString();
     }

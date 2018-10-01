@@ -326,8 +326,8 @@ public class CollectionBuilder extends BggQuerier<Items> {
                 .queryParam("username", username);
 
         addQueryParamIfSet(builder, "version", retrieveVersion);
-        addQueryParamIfSet(builder, "subtype", subtype.toString());
-        addQueryParamIfSet(builder, "excludesubtype", excludeSubtype.toString());
+        addQueryParamIfSet(builder, "subtype", subtype == null ? null : subtype.toString());
+        addQueryParamIfSet(builder, "excludesubtype", excludeSubtype == null ? null : excludeSubtype.toString());
         addQueryParamIfSet(builder, "id", ids);
         addQueryParamIfSet(builder, "brief", brief);
         addQueryParamIfSet(builder, "stats", stats);
