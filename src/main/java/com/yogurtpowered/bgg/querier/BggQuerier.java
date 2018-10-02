@@ -22,7 +22,11 @@ public abstract class BggQuerier<T> {
     // forum
     // thread
     // user
-    // guild
+
+    public static GuildBuilder guild(int id) {
+        return new GuildBuilder(id);
+    }
+
     public static PlaysBuilder plays(String username) {
         return new PlaysBuilder(username);
     }

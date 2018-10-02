@@ -53,4 +53,13 @@ public class BggQuerierTest {
 
         System.out.println(query);
     }
+
+    @Test
+    public void testGuild() {
+        String query = BggQuerier.guild(1)
+                .members()
+                .query();
+
+        System.out.println(query);
+    }
 }
