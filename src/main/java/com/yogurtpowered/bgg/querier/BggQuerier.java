@@ -21,7 +21,10 @@ public abstract class BggQuerier<T> {
     // forumlist
     // forum
     // thread
-    // user
+
+    public static UserBuilder user(String name) {
+        return new UserBuilder(name);
+    }
 
     public static GuildBuilder guild(int id) {
         return new GuildBuilder(id);

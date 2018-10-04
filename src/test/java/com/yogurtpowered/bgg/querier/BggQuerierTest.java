@@ -62,4 +62,14 @@ public class BggQuerierTest {
 
         System.out.println(query);
     }
+
+    @Test
+    public void testUser() {
+        String query = BggQuerier.user("rahdo")
+                .buddies()
+                .guilds()
+                .query();
+
+        System.out.println(query);
+    }
 }
