@@ -4,10 +4,22 @@ import com.google.common.base.Joiner;
 import com.yogurtpowered.bgg.querier.utils.RestClient;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import java.time.chrono.IsoChronology;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
+import java.time.format.ResolverStyle;
 import java.util.List;
 
 public abstract class BggQuerier<T> {
     protected static final String API_BASE_URL = "https://www.boardgamegeek.com/xmlapi2/";
+    protected static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ISO_LOCAL_DATE;
+    protected static final DateTimeFormatter DATE_TIME_FORMATTER = new DateTimeFormatterBuilder()
+            .parseCaseInsensitive()
+            .append(DateTimeFormatter.ISO_LOCAL_DATE)
+            .appendLiteral(' ')
+            .append(DateTimeFormatter.ISO_LOCAL_TIME)
+            .parseStrict()
+            .toFormatter();
     private static final Joiner COMMA_JOINER = Joiner.on(',').skipNulls();
 
     protected final RestClient restClient;
@@ -20,7 +32,10 @@ public abstract class BggQuerier<T> {
     // family
     // forumlist
     // forum
-    // thread
+
+    public static ThreadBuilder thread(int id) {
+        return new ThreadBuilder(id);
+    }
 
     public static UserBuilder user(String name) {
         return new UserBuilder(name);

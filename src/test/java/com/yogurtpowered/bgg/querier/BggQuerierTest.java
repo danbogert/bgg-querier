@@ -4,6 +4,9 @@ import com.yogurtpowered.bgg.querier.model.Item;
 import com.yogurtpowered.bgg.querier.model.Items;
 import org.junit.Test;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 public class BggQuerierTest {
     private static final String USERNAME = "username";
 
@@ -30,7 +33,7 @@ public class BggQuerierTest {
     @Test
     public void testHotItems() {
         String hot = BggQuerier.hotItems()
-                .type(HotItemsBuilder.Type.videogame)
+                .type(HotItemsBuilder.Type.boardgame)
                 .query();
 
         System.out.println(hot);
@@ -68,6 +71,15 @@ public class BggQuerierTest {
         String query = BggQuerier.user("rahdo")
                 .buddies()
                 .guilds()
+                .query();
+
+        System.out.println(query);
+    }
+
+    @Test
+    public void testThread() {
+        String query = BggQuerier.thread(1)
+                .minimumArticleDate(LocalDateTime.of(2005, 4, 24, 1, 18, 36))
                 .query();
 
         System.out.println(query);

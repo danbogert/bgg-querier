@@ -4,7 +4,6 @@ import com.google.common.base.Preconditions;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 public class PlaysBuilder extends BggQuerier<String> {
 
@@ -12,7 +11,6 @@ public class PlaysBuilder extends BggQuerier<String> {
     public enum Subtype { boardgame, boardgameaccessory, boardgameexpansion, rpgitem, videogame }
 
     private static final String PLAYS_PATH = "plays";
-    private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ISO_LOCAL_DATE;
 
     private String username;
     private Integer id;
@@ -38,7 +36,7 @@ public class PlaysBuilder extends BggQuerier<String> {
      */
     public PlaysBuilder minimumDate(LocalDate minimumDate) {
         Preconditions.checkNotNull(minimumDate);
-        this.minimumDate = minimumDate.format(FORMATTER);
+        this.minimumDate = minimumDate.format(DATE_FORMATTER);
         return this;
     }
 
@@ -47,7 +45,7 @@ public class PlaysBuilder extends BggQuerier<String> {
      */
     public PlaysBuilder maximumDate(LocalDate maximumDate) {
         Preconditions.checkNotNull(maximumDate);
-        this.maximumDate = maximumDate.format(FORMATTER);
+        this.maximumDate = maximumDate.format(DATE_FORMATTER);
         return this;
     }
 
