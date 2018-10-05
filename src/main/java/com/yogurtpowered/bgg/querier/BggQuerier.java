@@ -29,7 +29,14 @@ public abstract class BggQuerier<T> {
     }
 
     // thing
-    // family
+
+    public static FamilyBuilder family(int id) {
+        return new FamilyBuilder(id);
+    }
+
+    public static FamilyBuilder family(List<Integer> ids) {
+        return new FamilyBuilder(ids);
+    }
 
     public static ForumListBuilder forumList(int id, ForumListBuilder.Type type) {
         return new ForumListBuilder(id, type);

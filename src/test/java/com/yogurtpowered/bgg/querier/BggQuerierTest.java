@@ -101,4 +101,13 @@ public class BggQuerierTest {
 
         System.out.println(query);
     }
+
+    @Test
+    public void testFamily() {
+        String query = BggQuerier.family(30)
+                .addFamilyType(FamilyBuilder.FamilyType.boardgamefamily)
+                .query();
+
+        System.out.println(query);
+    }
 }
