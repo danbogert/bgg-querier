@@ -93,4 +93,12 @@ public class BggQuerierTest {
 
         System.out.println(query);
     }
+
+    @Test
+    public void testForumList() {
+        String query = BggQuerier.forumList(30, ForumListBuilder.Type.family)
+                .query();
+
+        System.out.println(query);
+    }
 }

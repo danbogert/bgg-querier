@@ -30,7 +30,10 @@ public abstract class BggQuerier<T> {
 
     // thing
     // family
-    // forumlist
+
+    public static ForumListBuilder forumList(int id, ForumListBuilder.Type type) {
+        return new ForumListBuilder(id, type);
+    }
 
     public static ForumBuilder forum(int id) {
         return new ForumBuilder(id);
