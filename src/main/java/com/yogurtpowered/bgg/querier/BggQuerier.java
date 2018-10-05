@@ -31,7 +31,10 @@ public abstract class BggQuerier<T> {
     // thing
     // family
     // forumlist
-    // forum
+
+    public static ForumBuilder forum(int id) {
+        return new ForumBuilder(id);
+    }
 
     public static ThreadBuilder thread(int id) {
         return new ThreadBuilder(id);

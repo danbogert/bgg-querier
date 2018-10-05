@@ -84,4 +84,13 @@ public class BggQuerierTest {
 
         System.out.println(query);
     }
+
+    @Test
+    public void testForum() {
+        String query = BggQuerier.forum(300)
+                .page(1)
+                .query();
+
+        System.out.println(query);
+    }
 }
