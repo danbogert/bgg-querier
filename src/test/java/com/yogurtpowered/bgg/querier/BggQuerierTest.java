@@ -110,4 +110,14 @@ public class BggQuerierTest {
 
         System.out.println(query);
     }
+
+    @Test
+    public void testThing() {
+        String query = BggQuerier.thing(235802)
+                .stats()
+                .videos()
+                .query();
+
+        System.out.println(query);
+    }
 }

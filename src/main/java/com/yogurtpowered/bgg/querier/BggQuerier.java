@@ -4,10 +4,8 @@ import com.google.common.base.Joiner;
 import com.yogurtpowered.bgg.querier.utils.RestClient;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import java.time.chrono.IsoChronology;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
-import java.time.format.ResolverStyle;
 import java.util.List;
 
 public abstract class BggQuerier<T> {
@@ -28,7 +26,13 @@ public abstract class BggQuerier<T> {
         this.restClient = new RestClient();
     }
 
-    // thing
+    public static ThingBuilder thing(int id) {
+        return new ThingBuilder(id);
+    }
+
+    public static ThingBuilder thing(List<Integer> ids) {
+        return new ThingBuilder(ids);
+    }
 
     public static FamilyBuilder family(int id) {
         return new FamilyBuilder(id);
