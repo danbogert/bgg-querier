@@ -315,7 +315,7 @@ public class CollectionBuilder extends BggQuerier<Items> {
         Preconditions.checkArgument(minute >= 0 && minute <= 59);
         Preconditions.checkArgument(second >= 0 && second <= 59);
         modifiedSince(year, month, day);
-        this.modifiedSince += "%20" + hour + ":" + minute + ":" + second;
+        this.modifiedSince += " " + hour + ":" + minute + ":" + second;
         return this;
     }
 

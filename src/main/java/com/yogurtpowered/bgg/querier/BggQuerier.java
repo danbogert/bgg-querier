@@ -73,7 +73,6 @@ public abstract class BggQuerier<T> {
     public static HotItemsBuilder hotItems() {
         return new HotItemsBuilder();
     }
-    // geeklist (not implemented)
 
     public static SearchBuilder search(String query) {
         return new SearchBuilder(query);

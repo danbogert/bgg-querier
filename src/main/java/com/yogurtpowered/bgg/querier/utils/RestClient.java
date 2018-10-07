@@ -25,7 +25,7 @@ public class RestClient {
         }
 
         try {
-            Thread.sleep(30 * attemptCount * attemptCount);
+            Thread.sleep(100 * attemptCount * attemptCount);
         } catch (InterruptedException e) {
         }
 
