@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?><plays username="TomVasel" userid="722" total="11" page="1" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse">
+<play id="1182" date="2003-07-17" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+			<item name="Apples to Apples" objecttype="thing" objectid="74">
+				<subtypes>
+										<subtype value="boardgame" />
+										<subtype value="boardgameintegration" />
+									</subtypes>
+			</item>
+								</play>
+	<play id="1183" date="2003-07-17" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+			<item name="BANG!" objecttype="thing" objectid="3955">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+								</play>
+	<play id="1178" date="2003-07-17" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+			<item name="Delta V" objecttype="thing" objectid="2817">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+								</play>
+	<play id="1179" date="2003-07-17" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+			<item name="PeaceBowl" objecttype="thing" objectid="5575">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+								</play>
+	<play id="1180" date="2003-07-17" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+			<item name="Starfarers of Catan" objecttype="thing" objectid="1897">
+				<subtypes>
+										<subtype value="boardgame" />
+										<subtype value="boardgameimplementation" />
+									</subtypes>
+			</item>
+								</play>
+	<play id="1181" date="2003-07-17" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+			<item name="Talkin&#039; Tango" objecttype="thing" objectid="5494">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+								</play>
+	<play id="1177" date="2003-07-17" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+			<item name="Tikal" objecttype="thing" objectid="54">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+								</play>
+	<play id="69" date="2003-07-14" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+			<item name="Barbarossa" objecttype="thing" objectid="550">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+								</play>
+	<play id="71" date="2003-07-13" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+			<item name="Im Zeichen des Kreuzes" objecttype="thing" objectid="1300">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+								</play>
+	<play id="73" date="2003-07-11" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+			<item name="Valley of the Mammoths" objecttype="thing" objectid="2535">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+								</play>
+	<play id="74" date="2003-07-10" quantity="1" length="0" incomplete="0" nowinstats="0" location="">
+			<item name="Filthy Rich" objecttype="thing" objectid="441">
+				<subtypes>
+										<subtype value="boardgame" />
+									</subtypes>
+			</item>
+								</play>
+	</plays>

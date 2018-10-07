@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="utf-8"?><items termsofuse="https://boardgamegeek.com/xmlapi/termsofuse"><item type="boardgame" id="235802">
+         <thumbnail>https://cf.geekdo-images.com/thumb/img/5P_SJfX4Cwb98ATMY1uncex110k=/fit-in/200x150/pic3752850.jpg</thumbnail>
+      <image>https://cf.geekdo-images.com/original/img/2dt-gI0CSxPb5ScRt2blwFGNsbw=/0x0/pic3752850.jpg</image>
+                                     				
+				<name type="primary" sortindex="1" value="Too Many Bones: Undertow" />
+			
+						                           
+						               													<description>Join new playable Gearloc characters Stanza and Duster as they journey down the Sibron River in search of answers in this standalone expansion/sequel to Too Many Bones!&amp;#10;&amp;#10;Too Many Bones: Undertow allows for 1-2 players out of the box, but by bringing in additional Gearlocs from the original game or adding in characters like Ghillie, Nugget, and Tink, you can create an adventure for up to four players. Undertow features all new baddies, encounters, tyrants, and a double-sided battle mat. Battles take place both on land and on your raft, adding even more variety and brain-bending tactics.&amp;#10;&amp;#10;</description>
+										      	               				<yearpublished value="2018" />
+						               				<minplayers value="1" />
+						               				<maxplayers value="2" />
+						      			<poll name="suggested_numplayers" title="User Suggested Number of Players" totalvotes="11">
+			
+		<results numplayers="1">		
+					<result value="Best" numvotes="0" />
+					<result value="Recommended" numvotes="10" />
+					<result value="Not Recommended" numvotes="0" />
+				</results>					
+			
+		<results numplayers="2">		
+					<result value="Best" numvotes="7" />
+					<result value="Recommended" numvotes="4" />
+					<result value="Not Recommended" numvotes="0" />
+				</results>					
+			
+		<results numplayers="2+">		
+					<result value="Best" numvotes="5" />
+					<result value="Recommended" numvotes="2" />
+					<result value="Not Recommended" numvotes="3" />
+				</results>					
+	</poll> 
+			               				<playingtime value="180" />
+						               				<minplaytime value="60" />
+						               				<maxplaytime value="180" />
+						               				<minage value="12" />
+						      			<poll name="suggested_playerage" title="User Suggested Player Age" totalvotes="0">
+			<results>		
+					<result value="2" numvotes="0" />
+					<result value="3" numvotes="0" />
+					<result value="4" numvotes="0" />
+					<result value="5" numvotes="0" />
+					<result value="6" numvotes="0" />
+					<result value="8" numvotes="0" />
+					<result value="10" numvotes="0" />
+					<result value="12" numvotes="0" />
+					<result value="14" numvotes="0" />
+					<result value="16" numvotes="0" />
+					<result value="18" numvotes="0" />
+					<result value="21 and up" numvotes="0" />
+				</results>					
+	</poll> 
+			      			<poll name="language_dependence" title="Language Dependence" totalvotes="1">
+			
+		<results>		
+					<result level="1" value="No necessary in-game text" numvotes="0" />
+					<result level="2" value="Some necessary text - easily memorized or small crib sheet" numvotes="0" />
+					<result level="3" value="Moderate in-game text - needs crib sheet or paste ups" numvotes="0" />
+					<result level="4" value="Extensive use of text - massive conversion needed to be playable" numvotes="1" />
+					<result level="5" value="Unplayable in another language" numvotes="0" />
+				</results>					
+	</poll> 
+			      			 
+			      				
+		 			
+
+			
+		
+					<link type="boardgamecategory" id="1022" value="Adventure" />
+		
+									
+				
+		 			
+
+			
+		
+					<link type="boardgamecategory" id="1017" value="Dice" />
+		
+									
+				
+		 			
+
+			
+		
+					<link type="boardgamecategory" id="1010" value="Fantasy" />
+		
+									
+				
+		 			
+
+			
+		
+					<link type="boardgamecategory" id="1046" value="Fighting" />
+		
+									
+			
+
+			      				
+		 			
+
+			
+		
+					<link type="boardgamemechanic" id="2023" value="Cooperative Play" />
+		
+									
+				
+		 			
+
+			
+		
+					<link type="boardgamemechanic" id="2664" value="Deck / Pool Building" />
+		
+									
+				
+		 			
+
+			
+		
+					<link type="boardgamemechanic" id="2072" value="Dice Rolling" />
+		
+									
+				
+		 			
+
+			
+		
+					<link type="boardgamemechanic" id="2028" value="Role Playing" />
+		
+									
+			
+
+			      				
+		 			
+
+			
+		
+					<link type="boardgamefamily" id="8374" value="Crowdfunding: Kickstarter" />
+		
+									
+				
+		 			
+
+			
+		
+					<link type="boardgamefamily" id="5666" value="Solitaire Games" />
+		
+									
+				
+		 			
+
+			
+		
+					<link type="boardgamefamily" id="50928" value="Too Many Bones" />
+		
+									
+			
+
+			      				
+		 			
+
+			
+		
+					<link type="boardgameexpansion" id="239292" value="Too Many Bones: 40 Days in Daelore" />
+		
+									
+				
+		 			
+
+			
+		
+					<link type="boardgameexpansion" id="236503" value="Too Many Bones: Box of Endless Adventures Promo Card" />
+		
+									
+				
+		 			
+
+			
+		
+					<link type="boardgameexpansion" id="239290" value="Too Many Bones: Gasket" />
+		
+									
+				
+		 			
+
+			
+		
+					<link type="boardgameexpansion" id="224899" value="Too Many Bones: Ghillie" />
+		
+									
+				
+		 			
+
+			
+		
+					<link type="boardgameexpansion" id="224897" value="Too Many Bones: Nugget" />
+		
+									
+				
+		 			
+
+			
+		
+					<link type="boardgameexpansion" id="224898" value="Too Many Bones: Tink" />
+		
+									
+			
+
+			      			
+
+			      				
+		 			
+
+			
+		
+					<link type="boardgameintegration" id="192135" value="Too Many Bones" />
+		
+									
+			
+
+			      			
+
+			      			
+
+			      			
+
+			      			
+
+			      	      	      				
+		 			
+
+			
+		
+					<link type="boardgamedesigner" id="60311" value="Adam Carlson" />
+		
+									
+				
+		 			
+
+			
+		
+					<link type="boardgamedesigner" id="60315" value="Josh J. Carlson" />
+		
+									
+			
+
+			      				
+		 			
+
+			
+		
+					<link type="boardgameartist" id="60315" value="Josh J. Carlson" />
+		
+									
+				
+		 			
+
+			
+		
+					<link type="boardgameartist" id="104238" value="Anthony LeTourneau" />
+		
+									
+			
+
+			      	      				
+		 			
+
+			
+		
+					<link type="boardgamepublisher" id="22593" value="Chip Theory Games" />
+		
+									
+			
+
+			
+			<videos total="23">
+						<video id="192343" title="Undertow Unboxing Teil 2 - Erweiterungen " category="unboxing" language="German" link="http://www.youtube.com/watch?v=lcxXdxL8hus" username="Genu1976" userid="1127492" postdate="2018-10-05T07:26:10-05:00" />
+						<video id="192023" title="Come Play With E! Undertow Unboxing" category="unboxing" language="English" link="http://www.youtube.com/watch?v=NuT098QWSys" username="strieeyes" userid="732877" postdate="2018-10-02T16:02:24-05:00" />
+						<video id="191626" title="Undertow Unboxing Teil 1" category="unboxing" language="German" link="http://www.youtube.com/watch?v=b3p7gbzp1cw" username="Genu1976" userid="1127492" postdate="2018-09-29T13:32:36-05:00" />
+						<video id="190473" title="Too Many Bones: Undertow | Game Overview" category="instructional" language="English" link="http://www.youtube.com/watch?v=ITA8fm5-AwQ" username="Sethcloud1" userid="1555675" postdate="2018-09-19T06:30:35-05:00" />
+						<video id="189206" title="Déballage/Unboxing - Too Many Bones: Undertow" category="unboxing" language="French" link="http://www.youtube.com/watch?v=0xJvZJdBYbU" username="boardgamequebec" userid="1178566" postdate="2018-09-06T22:05:12-05:00" />
+						<video id="186804" title="Too Many Bones: Undertow - Learn the Basics of Duster" category="instructional" language="English" link="http://www.youtube.com/watch?v=E0wrMF2KA0s" username="michaelhouze" userid="1699532" postdate="2018-08-17T08:04:41-05:00" />
+						<video id="186802" title="Too Many Bones: Undertow - Learn the Basics of Stanza" category="instructional" language="English" link="http://www.youtube.com/watch?v=4g50OR1xBFc" username="michaelhouze" userid="1699532" postdate="2018-08-17T08:03:36-05:00" />
+						<video id="186211" title="Too Many Bones Undertow - Set Up Quick" category="instructional" language="English" link="http://www.youtube.com/watch?v=g7nAq2EmDUA" username="copyright3k" userid="703871" postdate="2018-08-12T10:36:14-05:00" />
+						<video id="186161" title="Too Many Bones: Undertow Playthrough Day 6" category="session" language="English" link="http://www.youtube.com/watch?v=ahTBruDANNs" username="brighterthanthesun" userid="720145" postdate="2018-08-11T15:48:40-05:00" />
+						<video id="186084" title="Too many bones undertow unboxing + upgrade pack" category="session" language="English" link="http://www.youtube.com/watch?v=s82Znmjke6Q" username="Bairnt" userid="863077" postdate="2018-08-10T18:22:12-05:00" />
+						<video id="185985" title="Too Many Bones: Undertow - Chip Theory Games - Live at Gen Con 2018" category="interview" language="English" link="http://www.youtube.com/watch?v=zdwsMtiXQO8" username="pookin" userid="487310" postdate="2018-08-10T12:47:26-05:00" />
+						<video id="184639" title="Too Many Bones: Undertow &quot;1 Minute&quot; Unboxing (Chip Theory Games)" category="unboxing" language="English" link="http://www.youtube.com/watch?v=_2CzhLvSavU" username="Drakkenstrike" userid="272222" postdate="2018-07-30T11:20:09-05:00" />
+						<video id="184538" title="Too Many Bones: Undertow Playthrough - Day 5" category="session" language="English" link="http://www.youtube.com/watch?v=N1wmc9NWdOY" username="brighterthanthesun" userid="720145" postdate="2018-07-29T21:02:45-05:00" />
+						<video id="184502" title="Too Many Bones: Undertow Playthrough - Day 4" category="session" language="English" link="http://www.youtube.com/watch?v=MNDoCBE0FQQ" username="brighterthanthesun" userid="720145" postdate="2018-07-29T11:42:57-05:00" />
+						<video id="184183" title="Too Many Bones: Undertow Playthrough - Day 3" category="session" language="English" link="http://www.youtube.com/watch?v=zitdnjrbAHs" username="brighterthanthesun" userid="720145" postdate="2018-07-25T22:58:29-05:00" />
+					</videos>
+
+	<versions><item type="boardgameversion" id="370117">
+         <thumbnail>https://cf.geekdo-images.com/thumb/img/5P_SJfX4Cwb98ATMY1uncex110k=/fit-in/200x150/pic3752850.jpg</thumbnail>
+      <image>https://cf.geekdo-images.com/original/img/2dt-gI0CSxPb5ScRt2blwFGNsbw=/0x0/pic3752850.jpg</image>
+            				
+		 			
+
+			
+		
+					<link type="boardgameversion" id="235802" value="Too Many Bones: Undertow" inbound="true"/>
+		
+									
+			
+
+			                               				
+				<name type="primary" sortindex="1" value="First edition" />
+			
+						                           
+						      				
+		 			
+
+			
+		
+					<link type="boardgamepublisher" id="22593" value="Chip Theory Games" />
+		
+									
+			
+
+			      			
+
+			               				<yearpublished value="2018" />
+						               				<productcode value="" />
+						               				<width value="0" />
+						               				<length value="0" />
+						               				<depth value="0" />
+						               				<weight value="0" />
+						      				
+		 			
+
+			
+		
+					<link type="language" id="2184" value="English" />
+		
+									
+			
+
+			
+	
+
+	
+
+	
+	
+	
+   
+	
+          
+</item>
+</versions>
+
+	
+		<comments page="1" totalitems="121">
+			<comment username="ajlaw" rating="8.7" value="The more I play this one, the more I like it.  The dice + tactics during battles reminds me in some ways of what I like about KD:M showdowns.  The timer mechanism develops tension and the decision making during character customization keeps things interesting.  Replay value is high since characters are so different and character development is variable.  " />
+			<comment username="akirsch" rating="9" value="Kickstarter" />
+			<comment username="ako_ay_bisaya" rating="N/A" value="So excited for this." />
+			<comment username="Alex7Foxtrott" rating="9" value="Nice addition to my TMB Collection. Love Duster." />
+			<comment username="Anchovis42" rating="N/A" value="Juni 2018" />
+			<comment username="AndrewAU" rating="N/A" value="Kickstarted" />
+			<comment username="archmagemc" rating="N/A" value="Backed on Kickstarter. Estimated delivery June 2018; actual delivery September 2018." />
+			<comment username="Ardghal" rating="10" value="Proud KS Backer" />
+			<comment username="Aschenvogel" rating="8" value="TMB Undertow Bundle (inkl. Gasket und Adventure Map 2.0)" />
+			<comment username="ataniker" rating="N/A" value="-" />
+			<comment username="Boardgamerants" rating="10" value="About the best solo experience around!" />
+			<comment username="bordgames" rating="N/A" value="Awaiting kickstarter...
+
+" />
+			<comment username="Bottersnike" rating="9" value="Stand alone expansion that allows inclusion of previous characters and gives additional  campaign elements to an already fantastic game. Top quality build and design. Love this and perfect for sad and lonely solo gaming." />
+			<comment username="carlosleonrendon" rating="N/A" value="1-2
+60-180 minutes
+Best with 2" />
+			<comment username="charch" rating="10" value="It&#039;s everything that I like about the original Too Many Bones with a handful of tweaks and upgrades, plus a more affordable price.  I particularly like the water combat, which adds unique battles to the game." />
+			<comment username="che2487" rating="N/A" value="With Gasket Character Expansion" />
+			<comment username="Chee" rating="9" value="soloed. some nice new content. not enough on its own for repeated plays, but with the other expansion stuff it will keep me busy for a long while." />
+			<comment username="chestond" rating="N/A" value="1-2" />
+			<comment username="CinCin" rating="N/A" value="KS Edition" />
+			<comment username="Colemaninho" rating="N/A" value="Late Pledge Jun-18" />
+			<comment username="CrazyMani2" rating="N/A" value="PM: Done" />
+			<comment username="crwills" rating="N/A" value="2018-06. Kickstarter." />
+			<comment username="daethang" rating="10" value="Loved the original game. Components, gameplay, all of it come together nicely to form a strategic roleplaying like battle game." />
+			<comment username="danijel2008" rating="N/A" value="KS backed. Review copy also." />
+			<comment username="danissimus" rating="N/A" value="Payed, estimated Delivery: June 2018" />
+			<comment username="DD68" rating="N/A" value="Kickstarted:  Due June 2018 (possibly September or October)" />
+			<comment username="ddrinkle" rating="10" value="Can&#039;t wait for this!!  Going to be a great addition to the TMB universe!" />
+			<comment username="DirkdeGrey" rating="N/A" value="Arrived yesterday. A late pledge from KS. Just did my own private unboxing. Looks great. How does it play? Looks a bit complicated. So I am happy there are quite some videos available." />
+			<comment username="dmickelson" rating="10" value="Very much looking forward to this expansion! The game features a water themed environment along with mechs and ancient technology. Backward compatible with the original game. The storytelling along with the game dynamics and high quality components are amazing! High replayability as well due to the various encounter cards, bosses, and different ways to power up your character via skill trees. Highly recommend, especially to people who have enjoyed RPGs, such as Skyrim, Final Fantasy, WOW, etc." />
+			<comment username="Drnoluv" rating="9" value="First game from them, played as Duster and immediately wanted to play again. Help year old helps me play and wanted to play three nights in row. Not much keeps him entertained." />
+			<comment username="dunkelhuhn" rating="10" value="superb game!" />
+			<comment username="dwcmatrix" rating="N/A" value="1-2 Players, Best 3+" />
+			<comment username="EdUK" rating="N/A" value="Looking forward to this! Get involved on the Kickstarter " />
+			<comment username="Elliothsmith" rating="N/A" value="KS 2017.   Would highly encourage anyone to get in while they can.  This may not be inexpensive compared to other games, but all of the components are of the highest quality, the story components and art are exciting, but still light enough to be engaging for many audiences.  I regret not buying the full weight health chips when I bought the base game, they are incredibly fun to play with.  Hope everyone else is as excited as I am!" />
+			<comment username="eviljelloman" rating="N/A" value="Pledged for the expansion character, may eventually expand to getting the whole thing." />
+			<comment username="Ferticus" rating="10" value="Rating based off current TMB game... if it is anything like it.. then yea 10 for me!  The greatness outweighs any flaws that I might have had!" />
+			<comment username="FOX5903" rating="10" value="I&#039;m not sure how they did it but they found ways to improve upon what was already an incredible game. This game adds new characters, a double-sided play mat, new baddie types that enter the sides of the map to surround you, obstacle pieces, and even more witty and clever encounter cards." />
+			<comment username="Gemelli23" rating="N/A" value="Have not played yet." />
+			<comment username="Gothminister" rating="N/A" value="Kickstarter received 5.10.2018" />
+			<comment username="gumbow" rating="N/A" value="Pending KS CTG" />
+			<comment username="Gyges" rating="8" value="Yet More Stuff." />
+			<comment username="hoodriverduck" rating="N/A" value="Chip Theory Games (Expected: 10/2018)" />
+			<comment username="icechamber" rating="10" value="Late Backer" />
+			<comment username="Indig0" rating="N/A" value="September 2018" />
+			<comment username="ISUVetMed" rating="10" value="Pre-Ordered
+" />
+			<comment username="japol" rating="N/A" value="Undertow Bundle
+
++40 Days in Daelore
++Age of Tyranny 	
++Ally Pack 	
++Neoprene Control &#039;Ur Roll Dice Tray x2
++The Mat Pack (3rd ed) 
++TMB Card Set (3rd ed) 
++shipping
+
+September 2018
+
+paid " />
+			<comment username="JavaJoe96" rating="N/A" value="Kickstarter Project http://kck.st/2xMMxW2
+- Backed: 10/18/2017
+- Funded: 11/09/2017
+- Pledge Level: Pledge $100 or more: &quot;
+The Undertow Bundle!
+Includes the Following: 
+- Too Many Bones: Undertow 
+- Too Many Bones: Adventure Map 2.0 
+- Add-on Character: Gasket 
+- All Unlocked Stretch Goals 
+- PDF of The Waterlogged Book
+
+Please manually increase pledge to add any item not listed above. Items will be specified on the pledge manager after the campaign!
+
+US: $16 -- Can: $25 -- EU: $27 -- World: $41&quot;
+- Payment: $116 +25 40 Days in Daelore +25 Age of Tyranny +5 Ally Pack +24 Mat Pack 3rd ed. +10 Triplock Alloy Dice Pack
+- Survey: 01/22/2018 
+- Projected Delivery: 06/2018
+- Shipped: 
+
+Status: DELIVERED 09/21/2018" />
+			<comment username="jboyd33" rating="10" value="The original TMB is packed full of top notch components and fantastic characters. Chip Theory Games (CTG) truely produces the most amazing games and products and has a long standing reputation for wonderful on the spot customer service. I know I will continue backing CTG on future products for years to come. Glad to be part of the Undertow KS Campaign, including participating in the decision making for the mini story. Best part, is those decisions made in the daily spot light updates impact both the planned components for Undertow, as well as impacting &quot;mini-stretch goals&quot; that are not listed along with the listed stretch goals.
+
+Great work CTG! Thanks for inviting us in for the ride and for this new twist on SG&#039;s and backer participation in the evolution of the components in the game!" />
+			<comment username="Jhonyb" rating="N/A" value="KS Edition" />
+			<comment username="jiistme" rating="10" value="[b]Accessories:[/b] (see Too Many Bones Accessories) and adventure map 2.0, waterlogged book" />
+			<comment username="jirwin" rating="9" value="2018" />
+			<comment username="johnb4bgg" rating="N/A" value="KS is $68+12?ship. Too expensive. Buy used below $50, or retail." />
+			<comment username="JohnnySchmaser" rating="N/A" value="Kickstarter project. Beware of biased reviews and ratings from backers." />
+			<comment username="Kabalie" rating="N/A" value="Kickstarted in 2017." />
+			<comment username="kalisto59" rating="N/A" value="ordered about to arrive." />
+			<comment username="kayEFjay" rating="8.5" value="After a few plays I would say I prefer original TMB over this. Undertow has many small, side rules that interact awkwardly with each other and slow the game down. Still, TMB:U is an impressive game overall." />
+			<comment username="keepr23" rating="N/A" value="Purchased GenCon 2018" />
+			<comment username="Kfisher109" rating="N/A" value="Investigate" />
+			<comment username="LHCper" rating="N/A" value="Backed KS late 2017" />
+			<comment username="Lilou84x" rating="1" value="Balancing KS-not played ratings. 
+
+People should stop doing this. Take a look at BGG rating description before clicking anything. 
+
+Same goes for Weight: are u kidding me? HEAVY? A dice rolling game? oh my" />
+			<comment username="LoganDGarcia" rating="N/A" value="Well backed, not own at present.., more complete review to come." />
+			<comment username="Luds" rating="N/A" value="([url=https://www.kickstarter.com/projects/chiptheorygames/too-many-bones-undertow]www.kickstarter.com[/url], 2018-09-18)
+
+Not tried yet." />
+			<comment username="lukejuntunen" rating="N/A" value="Expansions: Gasket, Tink, Adventure Map 2.0" />
+			<comment username="matchfixer" rating="N/A" value="Kickstarted
+" />
+			<comment username="McNinjaX" rating="N/A" value="[2018-09-04] Comes with premium mat, chip tray, and Gasket character. " />
+			<comment username="Meat Shield" rating="N/A" value="After getting a Triplock I succumbed and pre-ordered this beauty too. Customer support is superb. Component quality is the BEST." />
+			<comment username="michael.perkins" rating="N/A" value="Est Delivery: June 2018" />
+			<comment username="milovmil" rating="9.5" value="Got tmb and love it with each play more and more. Undertow looks at least as good as tmb." />
+			<comment username="mindmgmt" rating="8" value="Takes a rating hit for poorly written rulebook." />
+			<comment username="MplsIRR" rating="7.5" value="Kickstarted. Constant rules ambiguities (or just flat out wrong) and long play time keep this from an 8 (I enjoy it but wouldn&#039;t suggest it). May update after more solo play (esp against more bosses)." />
+			<comment username="Naiko Hatesyou" rating="10" value="First one is amazing. Can’t wait for this." />
+			<comment username="Nessi2017" rating="N/A" value="Kickstarted" />
+			<comment username="NewbieGamingDad" rating="N/A" value="Direct" />
+			<comment username="nullcorp" rating="N/A" value="Delivery : September 2018" />
+			<comment username="ontheattack" rating="N/A" value="KS - Juni 2018" />
+			<comment username="Peisistratous" rating="10" value="One of the most awesome games I have ever owned in 40 yrs of gaming...both in terms of innovative game play and outstanding component quality ..." />
+			<comment username="Pershon" rating="10" value="Another spectacular addition to the franchise." />
+			<comment username="PHERNANDO" rating="N/A" value="KS" />
+			<comment username="pistonsfan94" rating="9" value="Based on my experience with its predecessor. Shouldnt be a major shift in gameplay." />
+			<comment username="Polywumpus" rating="9" value="Played at Origins.
+Love the base game also." />
+			<comment username="Posit" rating="8.5" value="Idem à Too many bones" />
+			<comment username="pozz70" rating="N/A" value="Kickstarted.
+" />
+			<comment username="realkenzaburo" rating="N/A" value="Kickstarter (late Pledge) est. shipping Summer 2018" />
+			<comment username="rebloka" rating="N/A" value="Kick Starter  Cant wait to get this one!" />
+			<comment username="richgilson" rating="N/A" value="Kickstarter - yeah, baby!" />
+			<comment username="rilzchen" rating="N/A" value="Oct. 2018" />
+			<comment username="roboman" rating="N/A" value="(11/09/2017) - Backed on Kickstarter!
+
+(09/26/2018) - Undertow and upgrades/expansions galore have arrived!" />
+			<comment username="RosieB2" rating="N/A" value="GenCon 2017" />
+			<comment username="Rudziszcz" rating="N/A" value="shipping in Aug/Sep 18" />
+			<comment username="ryglore" rating="8" value="Kickstarted, picked up at GenCon 2018
+
+" />
+			<comment username="Ryna" rating="N/A" value="D" />
+			<comment username="Sabometal" rating="N/A" value="1-2 Jugadores
+
+Si Solitario" />
+			<comment username="Sandmanx82" rating="9" value="More of the same incredible game from the guys at Chip Theory. New life has been breathed into TMB for me, which was my game of 2017. I absolutely love the asymmetry, the components, the artwork, the gameplay, everything is a 10 for me other than the length, which can be troublesome. I don&#039;t mind a long game, I just need it to be a bit shorter to see the table more often. Everything else about this game is off-the-charts amazing." />
+			<comment username="sbagnall" rating="N/A" value="Not going to rate but cannot wait for all this new content. Absolutely love this game. Goes down extremely well with both my gaming group and family. No one ever turns down a game of Too Many Bones." />
+			<comment username="schevola" rating="10" value="TMB is an good play, with replayablity, I am not much on co-op games, but this one is hard to win, but fun to play.  You loose a lot, but want to play again because you just know you can win." />
+			<comment username="schmatzgesicht" rating="N/A" value="UNPLAYED" />
+			<comment username="shockaday" rating="N/A" value="Love too many bones, I have backed Undertow on Kickstarter.  Due summer 2018" />
+			<comment username="Shu1984" rating="N/A" value="Preordered July 2018" />
+			<comment username="skeletonfish" rating="N/A" value="All KS exclusives
+" />
+			<comment username="SlothHugger" rating="N/A" value="✔" />
+		</comments>
+	
+	
+   
+	
+          <marketplacelistings>
+              <listing>
+         <listdate value="Wed, 01 Aug 2018 22:43:14 +0000" />
+         <price currency="USD" value="140.00" />
+           <condition value="new" />
+         <notes value="NEW! Kickstarter Edition.
+(Ready to ship.)
+
++Shipping
+Local Pickup available from 92886
+
+Will accept offers." />
+         
+         <link href="https://boardgamegeek.com/geekmarket/product/1560329" title="marketlisting" />
+       </listing>
+              <listing>
+         <listdate value="Sat, 22 Sep 2018 15:58:39 +0000" />
+         <price currency="CAD" value="120.00" />
+           <condition value="likenew" />
+         <notes value="Opened never played" />
+         
+         <link href="https://boardgamegeek.com/geekmarket/product/1599464" title="marketlisting" />
+       </listing>
+              <listing>
+         <listdate value="Wed, 26 Sep 2018 14:12:31 +0000" />
+         <price currency="USD" value="130.00" />
+           <condition value="likenew" />
+         <notes value="Played once. Ships from 61752. Includes premium health chips (will send the original health chips as well).
+
+Can add 40 Days in Daelore and/or Gasket for $30 each; Tink, Ghillie, and/or Nugget for $25/each; Adventure Map 2.0 for $18.
+
+Willing to accept offers; no trades, please and thank you!" />
+         
+         <link href="https://boardgamegeek.com/geekmarket/product/1602186" title="marketlisting" />
+       </listing>
+              <listing>
+         <listdate value="Sat, 06 Oct 2018 20:15:26 +0000" />
+         <price currency="EUR" value="139.49" />
+           <condition value="new" />
+         <notes value="English
+New in Shrink - from a smoke free home
+
+SHipping inside Germany 5.99 Euro - please ask for international quotations.
+
+Paypal is accepted if buyer pays fees." />
+         
+         <link href="https://boardgamegeek.com/geekmarket/product/1608464" title="marketlisting" />
+       </listing>
+            </marketplacelistings>
+          
+</item>
+</items>

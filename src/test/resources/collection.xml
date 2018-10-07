@@ -1,0 +1,42 @@
+
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<items totalitems="3" termsofuse="https://boardgamegeek.com/xmlapi/termsofuse" pubdate="Sun, 07 Oct 2018 01:37:00 +0000">
+		<item objecttype="thing" objectid="261529" subtype="boardgame" collid="54751572">
+	<name sortindex="5">The Boldest</name>
+		<yearpublished>2018</yearpublished>			<image>https://cf.geekdo-images.com/original/img/BxCJGyboALOercD8Q9I9vVwAMPM=/0x0/pic4328782.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/thumb/img/ATK48Zc780ild4tb2gc417H-8KI=/fit-in/200x150/pic4328782.jpg</thumbnail>
+		<stats minplayers="2"																	maxplayers="5"																	minplaytime="30"																	maxplaytime="90"																	playingtime="90"																	numowned="1" >
+				<rating value="N/A">			<usersrated value="5" />			<average value="7.4" />
+			<bayesaverage value="0" />			<stddev value="1.0198" />
+			<median value="0" />			<ranks>
+												<rank type="subtype" id="1" name="boardgame" friendlyname="Board Game Rank" value="Not Ranked" bayesaverage="Not Ranked" />
+											</ranks>		</rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="1" wishlistpriority="3" preordered="0" lastmodified="2018-10-05 23:26:35" />
+	<numplays>0</numplays>							</item>
+		<item objecttype="thing" objectid="259398" subtype="boardgame" collid="54751583">
+	<name sortindex="5">The Eternal Battle</name>
+		<yearpublished>2019</yearpublished>			<image>https://cf.geekdo-images.com/original/img/ghzxuwuexxIH8kdMEsb2brpvly4=/0x0/pic4337649.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/thumb/img/HiXfO9phd0F4fnv7gn0xCqEh8OM=/fit-in/200x150/pic4337649.jpg</thumbnail>
+		<stats minplayers="1"																	maxplayers="4"																	minplaytime="30"																	maxplaytime="180"																	playingtime="180"																	numowned="2" >
+				<rating value="N/A">			<usersrated value="3" />			<average value="9" />
+			<bayesaverage value="0" />			<stddev value="0" />
+			<median value="0" />			<ranks>
+												<rank type="subtype" id="1" name="boardgame" friendlyname="Board Game Rank" value="Not Ranked" bayesaverage="Not Ranked" />
+											</ranks>		</rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="1" wishlistpriority="4" preordered="0" lastmodified="2018-10-05 23:28:00" />
+	<numplays>0</numplays>							</item>
+		<item objecttype="thing" objectid="260905" subtype="boardgame" collid="54751525">
+	<name sortindex="1">Small Sea Empires</name>
+		<yearpublished>2019</yearpublished>			<image>https://cf.geekdo-images.com/original/img/vkDR8wk1GkRJb9dYhLtzi5qsxyA=/0x0/pic4325506.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/thumb/img/END6gOOzxSZ6GplAyLENXsCKqyc=/fit-in/200x150/pic4325506.jpg</thumbnail>
+		<stats minplayers="2"																	maxplayers="5"																	minplaytime="30"																	maxplaytime="60"																	playingtime="60"																	numowned="0" >
+				<rating value="N/A">			<usersrated value="0" />			<average value="0" />
+			<bayesaverage value="0" />			<stddev value="0" />
+			<median value="0" />			<ranks>
+												<rank type="subtype" id="1" name="boardgame" friendlyname="Board Game Rank" value="Not Ranked" bayesaverage="Not Ranked" />
+											</ranks>		</rating>
+			</stats>	<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="1" wishlistpriority="4" preordered="0" lastmodified="2018-10-05 23:19:19" />
+	<numplays>0</numplays>							</item>
+		
+</items>
+

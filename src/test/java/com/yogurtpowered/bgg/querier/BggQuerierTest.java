@@ -5,18 +5,17 @@ import com.yogurtpowered.bgg.querier.model.Items;
 import org.junit.Test;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 public class BggQuerierTest {
-    private static final String USERNAME = "username";
+    private static final String USERNAME = "TomVasel";
+    private static final String GAME = "pandemic";
 
     @Test
     public void testCollection() {
         Items items = BggQuerier.collection(USERNAME)
                 .subtype(CollectionBuilder.Subtype.boardgame)
                 .excludeSubtype(CollectionBuilder.Subtype.boardgameexpansion)
-                .modifiedSince(2018, 9, 13)
-                .brief()
+                .modifiedSince(2018, 10, 5)
                 .stats()
                 .query();
 
@@ -41,7 +40,7 @@ public class BggQuerierTest {
 
     @Test
     public void testSearch() {
-        String query = BggQuerier.search("pandemic")
+        String query = BggQuerier.search(GAME)
                 .type(SearchBuilder.Type.boardgame)
                 .query();
 
@@ -68,9 +67,11 @@ public class BggQuerierTest {
 
     @Test
     public void testUser() {
-        String query = BggQuerier.user("rahdo")
+        String query = BggQuerier.user(USERNAME)
                 .buddies()
                 .guilds()
+                .hot()
+                .top()
                 .query();
 
         System.out.println(query);
@@ -79,7 +80,7 @@ public class BggQuerierTest {
     @Test
     public void testThread() {
         String query = BggQuerier.thread(1)
-                .minimumArticleDate(LocalDateTime.of(2005, 4, 24, 1, 18, 36))
+                .minimumArticleDate(LocalDate.of(2005, 4, 24))
                 .query();
 
         System.out.println(query);
@@ -116,6 +117,10 @@ public class BggQuerierTest {
         String query = BggQuerier.thing(235802)
                 .stats()
                 .videos()
+                .comments()
+                .historical()
+                .marketplace()
+                .versions()
                 .query();
 
         System.out.println(query);
