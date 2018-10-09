@@ -1,5 +1,6 @@
 package com.yogurtpowered.bgg.querier;
 
+import com.yogurtpowered.bgg.querier.model.Guild;
 import com.yogurtpowered.bgg.querier.model.Item;
 import com.yogurtpowered.bgg.querier.model.Items;
 import org.junit.Test;
@@ -58,11 +59,12 @@ public class BggQuerierTest {
 
     @Test
     public void testGuild() {
-        String query = BggQuerier.guild(1)
+        Guild guild = BggQuerier.guild(24)
                 .members()
+                .page(2)
                 .query();
 
-        System.out.println(query);
+        System.out.println(guild);
     }
 
     @Test

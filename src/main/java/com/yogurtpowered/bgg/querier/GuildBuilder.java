@@ -1,9 +1,10 @@
 package com.yogurtpowered.bgg.querier;
 
 import com.google.common.base.Preconditions;
+import com.yogurtpowered.bgg.querier.model.Guild;
 import org.springframework.web.util.UriComponentsBuilder;
 
-public class GuildBuilder extends BggQuerier<String> {
+public class GuildBuilder extends BggQuerier<Guild> {
 
     public enum SortType { date, username }
 
@@ -58,7 +59,7 @@ public class GuildBuilder extends BggQuerier<String> {
     }
 
     @Override
-    protected Class<String> getResponseType() {
-        return String.class;
+    protected Class<Guild> getResponseType() {
+        return Guild.class;
     }
 }
