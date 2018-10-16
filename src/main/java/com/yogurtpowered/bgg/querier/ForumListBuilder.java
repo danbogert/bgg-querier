@@ -1,9 +1,10 @@
 package com.yogurtpowered.bgg.querier;
 
 import com.google.common.base.Preconditions;
+import com.yogurtpowered.bgg.querier.model.ForumList;
 import org.springframework.web.util.UriComponentsBuilder;
 
-public class ForumListBuilder extends BggQuerier<String> {
+public class ForumListBuilder extends BggQuerier<ForumList> {
 
     public enum Type { family, thing }
 
@@ -31,7 +32,7 @@ public class ForumListBuilder extends BggQuerier<String> {
     }
 
     @Override
-    protected Class<String> getResponseType() {
-        return String.class;
+    protected Class<ForumList> getResponseType() {
+        return ForumList.class;
     }
 }

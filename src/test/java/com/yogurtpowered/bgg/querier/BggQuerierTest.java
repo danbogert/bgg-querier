@@ -1,5 +1,6 @@
 package com.yogurtpowered.bgg.querier;
 
+import com.yogurtpowered.bgg.querier.model.ForumList;
 import com.yogurtpowered.bgg.querier.model.Guild;
 import com.yogurtpowered.bgg.querier.model.Item;
 import com.yogurtpowered.bgg.querier.model.Items;
@@ -99,10 +100,10 @@ public class BggQuerierTest {
 
     @Test
     public void testForumList() {
-        String query = BggQuerier.forumList(30, ForumListBuilder.Type.family)
+        ForumList forumList = BggQuerier.forumList(30, ForumListBuilder.Type.family)
                 .query();
 
-        System.out.println(query);
+        System.out.println(forumList);
     }
 
     @Test
