@@ -9,6 +9,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlAccessorType(XmlAccessType.NONE)
 @XmlRootElement(name = "forum")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Forum {
     @JacksonXmlProperty(isAttribute = true, localName = "id")
     private int id;
